@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'emailerror/spring:v1.0'
-        KUBE_NAMESPACE = ''
+        KUBE_NAMESPACE = 'default'
     }
 
     stages {
