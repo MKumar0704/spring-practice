@@ -4,6 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'emailerror/spring:v1.0'
         KUBE_NAMESPACE = 'default'
+        DOCKER_USERNAME = email.error.421@gmail.com
+        DOCKER_PASSWORD = Emailerror@123
     }
 
     stages {
@@ -34,7 +36,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: 'docker-credentials', url: '']) {
+                    bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%'
                         bat 'docker push %DOCKER_IMAGE%'
                     }
                 }
