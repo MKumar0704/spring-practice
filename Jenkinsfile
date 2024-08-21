@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'emailerror/spring:v1.0'
+        DOCKER_IMAGE = 'emailerror/spring:v1.1'
         KUBE_NAMESPACE = 'default'
         DOCKER_USERNAME = 'email.error.421@gmail.com'
         DOCKER_PASSWORD = 'Emailerror@123'
