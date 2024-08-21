@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Build the Spring Boot application
-                    sh './mvnw clean package'
+                    bat './mvnw.cmd clean package'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    sh 'docker build -t $DOCKER_IMAGE .'
+                    bat 'docker build -t %DOCKER_IMAGE% .'
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry([credentialsId: 'docker-credentials', url: '']) {
-                        sh 'docker push $DOCKER_IMAGE'
+                        bat 'docker push %DOCKER_IMAGE%'
                     }
                 }
             }
@@ -44,7 +44,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    kubectlApply(KUBECONFIG: '/path/to/kubeconfig', MANIFEST: 'spring-postgres.yaml')
+                    kubectlApply(KUBECONFIG: 'C:\\path\\to\\kubeconfig', MANIFEST: 'spring-postgres.yaml')
                 }
             }
         }
