@@ -38,7 +38,6 @@ pipeline {
                 script {
                     bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%'
                         bat 'docker push %DOCKER_IMAGE%'
-                    }
                 }
             }
         }
