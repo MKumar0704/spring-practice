@@ -4,8 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'emailerror/spring:v1.0'
         KUBE_NAMESPACE = 'default'
-        DOCKER_USERNAME = email.error.421@gmail.com
-        DOCKER_PASSWORD = Emailerror@123
+        DOCKER_USERNAME = 'email.error.421@gmail.com'
+        DOCKER_PASSWORD = 'Emailerror@123'
     }
 
     stages {
