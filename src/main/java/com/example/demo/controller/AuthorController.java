@@ -44,11 +44,6 @@ public class AuthorController {
         return "Dockerize and deploy the Spring Boot application using kubernetes";
     }
 
-    @RequestMapping("/info")
-    public String info(){
-        return "{----- /authors, /books, /authors/{author_id}, /books/{isbn} -----}";
-    }
-    
     @GetMapping("/authors")
     public List<AuthorDto> getAllAuthors(){
         List<AuthorEntity> authors=authorService.findAll();
