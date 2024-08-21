@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                  bat 'kubectl apply -f spring-postgres.yaml --kubeconfig C:\\Users\\Thangamani R\\.kube\\config'                }
+                  bat 'kubectl apply -f spring-postgres.yaml --kubeconfig "C:\\Users\\Thangamani R\\.kube\\config"'                }
             }
         }
     }
